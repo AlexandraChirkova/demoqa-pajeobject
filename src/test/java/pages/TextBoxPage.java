@@ -9,14 +9,13 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxPage {
 
-    private SelenideElement
-            titlePage = $(".text-center"),
-            userName =$("#userName"),
-            userEmail =$("#userEmail"),
-            currentAddress =$("#currentAddress"),
-            permanentAddress =$("#permanentAddress"),
-            submitButton = $("#submit"),
-            infoTable = $("#output");
+    private final SelenideElement titlePage = $(".text-center");
+    private final SelenideElement userName =$("#userName");
+    private final SelenideElement userEmail =$("#userEmail");
+    private final SelenideElement currentAddress =$("#currentAddress");
+    private final SelenideElement permanentAddress =$("#permanentAddress");
+    private final SelenideElement submitButton = $("#submit");
+    private final SelenideElement infoTable = $("#output");
 
 
     public TextBoxPage openPage() {

@@ -10,20 +10,19 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationFormPage {
 
-    private SelenideElement
-            titleForm = $("div[class='practice-form-wrapper'] h5"),
-            firstName = $("#firstName"),
-            lastName=$("#lastName"),
-            userEmail= $("#userEmail"),
-            genderWrapper = $("#genterWrapper"),
-            userPhoneNumber = $("#userNumber"),
-            calendarInput = $("#dateOfBirthInput"),
-            subjectsInput = $("#subjectsInput"),
-            uploadPicture = $("#uploadPicture"),
-            currentAddress = $("#currentAddress"),
-            stateInput = $("#state"),
-            cityInput = $("#city"),
-            submitButton = $("#submit");
+    private final SelenideElement titleForm = $("div[class='practice-form-wrapper'] h5");
+    private final SelenideElement firstName = $("#firstName");
+    private final SelenideElement lastName=$("#lastName");
+    private final SelenideElement userEmail= $("#userEmail");
+    private final SelenideElement genderWrapper = $("#genterWrapper");
+    private final SelenideElement userPhoneNumber = $("#userNumber");
+    private final SelenideElement calendarInput = $("#dateOfBirthInput");
+    private final SelenideElement subjectsInput = $("#subjectsInput");
+    private final SelenideElement uploadPicture = $("#uploadPicture");
+    private final SelenideElement currentAddress = $("#currentAddress");
+    private final SelenideElement stateInput = $("#state");
+    private final SelenideElement cityInput = $("#city");
+    private final SelenideElement submitButton = $("#submit");
 
 
     CalendarComponent calendarComponent = new CalendarComponent();
