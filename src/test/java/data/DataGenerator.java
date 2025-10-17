@@ -12,7 +12,7 @@ public class DataGenerator {
     public String email = faker.internet().emailAddress();
     public String gender = faker.options().option("Male", "Female", "Other");
     public String phone = faker.phoneNumber().subscriberNumber(10);
-    public String day = faker.number().numberBetween(1, 31) + "";
+    public String day = faker.number().numberBetween(1, 28) + "";
     public String month = faker.options().option(
             "January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
@@ -31,16 +31,13 @@ public class DataGenerator {
     public String image = "images/img1.jpeg";
 
     public String getRandomCity(String state) {
-        if (state.equals("NCR")) {
-            return faker.options().option("Delhi", "Gurgaon", "Noida");
-        } else if (state.equals("Uttar Pradesh")) {
-            return faker.options().option("Agra", "Lucknow", "Merrut");
-        } else if (state.equals("Haryana")) {
-            return faker.options().option("Karnal", "Panipat");
-        } else if (state.equals("Rajasthan")) {
-            return faker.options().option("Jaipur", "Jaiselmer");
-        }
-        return "";
+        return switch (state) {
+            case "NCR" -> faker.options().option("Delhi", "Gurgaon", "Noida");
+            case "Uttar Pradesh" -> faker.options().option("Agra", "Lucknow", "Merrut");
+            case "Haryana" -> faker.options().option("Karnal", "Panipat");
+            case "Rajasthan" -> faker.options().option("Jaipur", "Jaiselmer");
+            default -> null;
+        };
     }
 
 }
