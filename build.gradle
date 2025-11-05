@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group = 'qa.demo'
@@ -9,6 +10,19 @@ repositories {
     mavenCentral()
 }
 
+allure {
+    report {
+        version.set("2.24.0")
+    }
+    adapter {
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.24.0")
+            }
+        }
+    }
+}
+
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
@@ -16,6 +30,7 @@ dependencies {
     implementation("com.codeborne:selenide:7.11.1")
     implementation 'org.slf4j:slf4j-simple:2.0.16'
     implementation("com.github.javafaker:javafaker:1.0.2")
+    implementation("io.qameta.allure:allure-maven:2.8")
 }
 
 test {
