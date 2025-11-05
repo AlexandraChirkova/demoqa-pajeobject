@@ -1,9 +1,12 @@
 
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationFormPage;
 import pages.components.ModalComponent;
+
+import io.qameta.allure.selenide.AllureSelenide;
 
 
 public class RegistrationFormTest extends TestBase {
@@ -13,6 +16,10 @@ public class RegistrationFormTest extends TestBase {
 
     @Test
     void applicationFormTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide()
+                .screenshots(true)
+                .savePageSource(true));
+
         registrationFormPage.openPage()
                 .setFirstName("Alexandra")
                 .setLastName("Chirkova")

@@ -24,15 +24,21 @@ allure {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    implementation("com.codeborne:selenide:7.11.1")
-    implementation 'org.slf4j:slf4j-simple:2.0.16'
-    implementation("com.github.javafaker:javafaker:1.0.2")
-    implementation("io.qameta.allure:allure-maven:2.8")
+}
+
+dependencies {
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter:5.10.0',
+            'org.junit.jupiter:junit-jupiter',
+            'com.codeborne:selenide:7.0.4',
+            'io.qameta.allure:allure-selenide:2.24.0',
+            'org.slf4j:slf4j-simple:2.0.9',
+            'com.github.javafaker:javafaker:1.0.2'
+    )
 }
 
 test {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
